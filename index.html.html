@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ANGEL Servicio Técnico: reparación de PC y notebooks, redes informáticas, mantenimiento, instalación de programas, hardware, equipos a medida y recuperación de datos. Trabajamos con todas las marcas." />
+  <meta name="theme-color" content="#061321" />
+  <title>ANGEL | Servicio Técnico</title>
+
+  <!-- Tipografías de marca -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#02070d;
+      --bg-2:#061321;
+      --surface:#0a1a2b;
+      --surface-2:#0d2237;
+      --line:rgba(255,255,255,.09);
+      --text:#f5f8fc;
+      --muted:#9cafc0;
+      --blue:#009cff;
+      --blue-2:#1261c9;
+      --blue-3:#4bc1ff;
+      --green:#25d366;
+      --shadow:0 24px 70px rgba(0,0,0,.42);
+      --radius:24px;
+      --container:1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Montserrat",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 80% 8%,rgba(0,156,255,.14),transparent 28rem),
+        radial-gradient(circle at 10% 35%,rgba(18,97,201,.10),transparent 26rem),
+        var(--bg);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    body::selection{background:var(--blue);color:#00101c}
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%;object-fit:cover}
+    button,input,select,textarea{font:inherit}
+    .container{width:min(calc(100% - 40px),var(--container));margin:auto}
+
+    /* ---------- Header ---------- */
+    header{
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:1000;
+      background:rgba(2,7,13,.72);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-symbol{
+      width:43px;height:43px;flex:0 0 43px;
+      position:relative;
+      display:grid;place-items:center;
+      border:1px solid rgba(0,156,255,.45);
+      border-radius:13px;
+      background:linear-gradient(145deg,#0d2a45,#02070d);
+      box-shadow:0 0 30px rgba(0,156,255,.16);
+      overflow:hidden;
+    }
+    .brand-symbol::before{
+      content:"";
+      position:absolute;
+      width:42px;height:10px;
+      border:3px solid var(--blue);
+      border-left-color:transparent;
+      border-radius:50%;
+      transform:rotate(-18deg);
+      opacity:.9;
+    }
+    .brand-a{
+      position:relative;
+      z-index:2;
+      font-family:"Exo 2",sans-serif;
+      font-size:25px;
+      font-weight:800;
+      font-style:italic;
+      color:#fff;
+    }
+    .brand-name{
+      font-family:"Exo 2",sans-serif;
+      font-size:22px;
+      font-weight:800;
+      letter-spacing:.12em;
+    }
+    .brand-name span{color:var(--blue)}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{
+      color:#d9e6f0;
+      font-size:13px;
+      font-weight:600;
+      transition:.25s;
+    }
+    .nav-links a:hover{color:var(--blue)}
+    .nav-cta{
+      padding:11px 17px;
+      border-radius:12px;
+      background:var(--blue);
+      color:#00101c!important;
+      box-shadow:0 10px 28px rgba(0,156,255,.22);
+    }
+    .nav-cta:hover{transform:translateY(-1px);background:#35b5ff}
+    .menu-btn{
+      display:none;
+      width:44px;height:44px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:var(--surface);
+      color:#fff;
+      cursor:pointer;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero{
+      min-height:780px;
+      padding:150px 0 90px;
+      position:relative;
+      display:flex;
+      align-items:center;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      align-items:center;
+      gap:60px;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:7px 11px;
+      border:1px solid rgba(0,156,255,.25);
+      background:rgba(0,156,255,.07);
+      border-radius:999px;
+      color:#7ed4ff;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      margin-bottom:20px;
+    }
+    .eyebrow i{
+      width:7px;height:7px;border-radius:50%;
+      background:var(--blue);
+      box-shadow:0 0 14px var(--blue);
+    }
+    h1{
+      font-family:"Exo 2",sans-serif;
+      font-size:clamp(48px,6.3vw,82px);
+      line-height:.94;
+      letter-spacing:-.035em;
+      max-width:760px;
+      margin-bottom:22px;
+    }
+    h1 .gradient{
+      background:linear-gradient(100deg,#fff 15%,#83d7ff 48%,#009cff 90%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .hero-copy{
+      color:#aebfce;
+      font-size:17px;
+      max-width:650px;
+      margin-bottom:30px;
+    }
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .btn{
+      min-height:52px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:0 20px;
+      border-radius:14px;
+      border:1px solid transparent;
+      font-size:13px;
+      font-weight:700;
+      transition:.25s ease;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background:var(--blue);
+      color:#00101c;
+      box-shadow:0 14px 35px rgba(0,156,255,.22);
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(0,156,255,.32)}
+    .btn-secondary{
+      background:rgba(255,255,255,.025);
+      border-color:var(--line);
+      color:#fff;
+    }
+    .btn-secondary:hover{background:rgba(255,255,255,.06);border-color:rgba(0,156,255,.3)}
+
+    .hero-visual{
+      position:relative;
+      min-height:500px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .hero-card{
+      width:min(100%,560px);
+      aspect-ratio:1/1;
+      border-radius:34px;
+      overflow:hidden;
+      position:relative;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:var(--shadow);
+      background:#071321;
+      transform:rotate(1.5deg);
+    }
+    .hero-card img{height:100%;filter:saturate(.9) contrast(1.05)}
+    .hero-card::after{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        linear-gradient(180deg,rgba(2,7,13,.05),rgba(2,7,13,.78)),
+        linear-gradient(110deg,rgba(0,156,255,.25),transparent 45%);
+    }
+    .hero-logo{
+      position:absolute;
+      z-index:2;
+      left:28px;bottom:28px;
+      display:flex;align-items:center;gap:12px;
+      padding:13px 16px;
+      border-radius:17px;
+      background:rgba(2,7,13,.68);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(12px);
+    }
+    .hero-logo .brand-symbol{width:42px;height:42px}
+    .hero-logo strong{
+      display:block;
+      font-family:"Exo 2",sans-serif;
+      letter-spacing:.1em;
+      font-size:19px;
+    }
+    .hero-logo small{
+      display:block;color:#83d7ff;
+      font-size:9px;font-weight:700;
+      letter-spacing:.18em;
+    }
+    .float-stat{
+      position:absolute;
+      z-index:4;
+      top:12%;left:-5%;
+      padding:14px 16px;
+      border-radius:17px;
+      background:rgba(7,19,33,.82);
+      border:1px solid rgba(0,156,255,.23);
+      backdrop-filter:blur(15px);
+      box-shadow:var(--shadow);
+    }
+    .float-stat strong{
+      display:block;font-family:"Exo 2";font-size:20px
+    }
+    .float-stat span{font-size:10px;color:var(--muted)}
+
+    /* ---------- Sections ---------- */
+    section{padding:105px 0}
+    .section-head{
+      display:flex;align-items:end;justify-content:space-between;
+      gap:30px;margin-bottom:42px;
+    }
+    .kicker{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.17em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    h2{
+      font-family:"Exo 2",sans-serif;
+      font-size:clamp(32px,4vw,50px);
+      line-height:1.02;
+      letter-spacing:-.025em;
+    }
+    .section-desc{max-width:520px;color:var(--muted);font-size:14px}
+
+    /* ---------- Services ---------- */
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .service{
+      min-height:245px;
+      padding:25px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:linear-gradient(145deg,rgba(13,34,55,.88),rgba(5,14,24,.82));
+      position:relative;
+      overflow:hidden;
+      transition:.3s;
+    }
+    .service::before{
+      content:"";
+      position:absolute;
+      width:160px;height:160px;
+      top:-100px;right:-80px;
+      background:radial-gradient(circle,rgba(0,156,255,.22),transparent 68%);
+    }
+    .service:hover{
+      transform:translateY(-5px);
+      border-color:rgba(0,156,255,.32);
+      box-shadow:0 20px 50px rgba(0,0,0,.25);
+    }
+    .service-icon{
+      width:50px;height:50px;
+      display:grid;place-items:center;
+      border-radius:15px;
+      color:var(--blue);
+      background:rgba(0,156,255,.08);
+      border:1px solid rgba(0,156,255,.18);
+      margin-bottom:20px;
+    }
+    .service-icon svg{width:24px;height:24px}
+    .service h3{
+      font-family:"Exo 2",sans-serif;
+      font-size:20px;
+      margin-bottom:9px;
+    }
+    .service p{color:var(--muted);font-size:12.5px;line-height:1.7}
+
+    /* ---------- Feature band ---------- */
+    .feature-band{
+      padding:0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(90deg,rgba(0,156,255,.04),rgba(255,255,255,.015),rgba(0,156,255,.04));
+    }
+    .feature-row{
+      min-height:130px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      align-items:center;
+      gap:20px;
+    }
+    .feature{
+      display:flex;align-items:center;gap:13px;
+    }
+    .feature svg{width:24px;height:24px;color:var(--blue);flex:0 0 auto}
+    .feature strong{display:block;font-size:12px}
+    .feature span{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+
+    /* ---------- About / process ---------- */
+    .about-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:70px;
+      align-items:center;
+    }
+    .about-image{
+      border-radius:28px;
+      overflow:hidden;
+      min-height:510px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .about-image img{height:100%;min-height:510px}
+    .about-copy p{color:var(--muted);font-size:14px;margin:15px 0 25px}
+    .checks{display:grid;gap:13px}
+    .check{
+      display:flex;align-items:flex-start;gap:11px;
+      font-size:13px;
+    }
+    .check span{
+      width:23px;height:23px;flex:0 0 23px;
+      display:grid;place-items:center;
+      border-radius:50%;
+      background:rgba(0,156,255,.10);
+      color:var(--blue);
+      border:1px solid rgba(0,156,255,.18);
+      font-size:12px;
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .step{
+      position:relative;
+      padding:25px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(255,255,255,.018);
+    }
+    .step-number{
+      font-family:"Exo 2";
+      color:rgba(0,156,255,.35);
+      font-size:42px;
+      line-height:1;
+      margin-bottom:20px;
+    }
+    .step h3{font-family:"Exo 2";font-size:18px;margin-bottom:8px}
+    .step p{font-size:11.5px;color:var(--muted)}
+
+    /* ---------- Hardware ---------- */
+    .hardware{
+      border:1px solid rgba(0,156,255,.15);
+      background:
+        linear-gradient(110deg,rgba(0,156,255,.10),rgba(6,19,33,.85) 48%),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=82") center/cover;
+      border-radius:32px;
+      overflow:hidden;
+      padding:65px;
+      position:relative;
+    }
+    .hardware::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(90deg,rgba(2,7,13,.96),rgba(2,7,13,.48),rgba(2,7,13,.18));
+    }
+    .hardware > *{position:relative;z-index:1}
+    .hardware p{max-width:620px;color:#b5c6d5;font-size:14px;margin:14px 0 25px}
+    .hardware-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{
+      padding:8px 11px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.22);
+      font-size:10px;color:#d9e6f0;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:30px;
+    }
+    .contact-panel,.form-panel{
+      padding:32px;
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:linear-gradient(145deg,rgba(13,34,55,.72),rgba(5,14,24,.75));
+    }
+    .contact-panel h3,.form-panel h3{
+      font-family:"Exo 2";font-size:25px;margin-bottom:10px
+    }
+    .contact-panel > p{font-size:13px;color:var(--muted);margin-bottom:25px}
+    .contact-items{display:grid;gap:12px}
+    .contact-item{
+      display:flex;align-items:center;gap:13px;
+      padding:13px;border-radius:15px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.018);
+    }
+    .contact-item svg{width:20px;color:var(--blue)}
+    .contact-item strong{display:block;font-size:11px}
+    .contact-item span{display:block;font-size:10px;color:var(--muted)}
+    form{display:grid;gap:13px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    label{display:grid;gap:7px;font-size:10px;color:#b9cad7;font-weight:600}
+    input,select,textarea{
+      width:100%;
+      border:1px solid var(--line);
+      background:#061321;
+      color:#fff;
+      border-radius:13px;
+      outline:none;
+      padding:13px 14px;
+      font-size:12px;
+      transition:.2s;
+    }
+    input:focus,select:focus,textarea:focus{
+      border-color:rgba(0,156,255,.55);
+      box-shadow:0 0 0 4px rgba(0,156,255,.08);
+    }
+    textarea{min-height:115px;resize:vertical}
+    .form-note{font-size:9px;color:#738899;text-align:center}
+
+    /* ---------- FAQ ---------- */
+    .faq{max-width:850px;margin:auto}
+    .faq-item{
+      border-bottom:1px solid var(--line);
+    }
+    .faq-q{
+      width:100%;
+      padding:20px 0;
+      background:none;border:0;color:#fff;
+      display:flex;align-items:center;justify-content:space-between;
+      text-align:left;cursor:pointer;
+      font-size:13px;font-weight:600;
+    }
+    .faq-q span:last-child{
+      color:var(--blue);font-size:22px;line-height:1;
+      transition:.25s;
+    }
+    .faq-a{
+      max-height:0;overflow:hidden;
+      color:var(--muted);
+      font-size:12px;
+      transition:max-height .3s ease,padding .3s ease;
+    }
+    .faq-item.open .faq-a{max-height:180px;padding:0 0 18px}
+    .faq-item.open .faq-q span:last-child{transform:rotate(45deg)}
+
+    /* ---------- CTA ---------- */
+    .final-cta{
+      text-align:center;
+      padding:95px 20px;
+      border-top:1px solid var(--line);
+      background:
+        radial-gradient(circle at 50% 0,rgba(0,156,255,.18),transparent 35rem),
+        var(--bg-2);
+    }
+    .final-cta h2{max-width:720px;margin:0 auto 16px}
+    .final-cta p{max-width:600px;margin:0 auto 27px;color:var(--muted);font-size:13px}
+    .final-cta .hero-actions{justify-content:center}
+
+    /* ---------- Footer ---------- */
+    footer{padding:28px 0;border-top:1px solid var(--line);background:#01050a}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .footer-copy{font-size:9px;color:#718596}
+    .footer-links{display:flex;gap:17px;font-size:10px;color:#a4b5c3}
+    .footer-links a:hover{color:var(--blue)}
+
+    /* ---------- Floating WhatsApp ---------- */
+    .wa-float{
+      position:fixed;
+      z-index:1100;
+      right:20px;bottom:20px;
+      width:58px;height:58px;
+      display:grid;place-items:center;
+      border-radius:50%;
+      background:var(--green);
+      color:#06250f;
+      box-shadow:0 14px 38px rgba(0,0,0,.38);
+      transition:.25s;
+    }
+    .wa-float:hover{transform:translateY(-4px) scale(1.04)}
+    .wa-float svg{width:27px;height:27px}
+
+    /* ---------- Reveal ---------- */
+    .reveal{opacity:0;transform:translateY(18px);transition:.65s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:900px){
+      .nav-links{
+        position:absolute;top:78px;left:20px;right:20px;
+        display:none;flex-direction:column;align-items:stretch;
+        padding:15px;border:1px solid var(--line);
+        background:rgba(5,14,24,.97);border-radius:18px;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{padding:11px}
+      .menu-btn{display:grid;place-items:center}
+      .hero{padding-top:125px}
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-visual{min-height:430px}
+      .float-stat{left:0}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .feature-row{grid-template-columns:repeat(2,1fr);padding:25px 0}
+      .process-grid{grid-template-columns:repeat(2,1fr)}
+      .about-image{min-height:420px}
+      .about-image img{min-height:420px}
+    }
+    @media (max-width:600px){
+      .container{width:min(calc(100% - 28px),var(--container))}
+      .nav{height:70px}
+      .nav-links{top:70px;left:14px;right:14px}
+      .brand-name{font-size:18px}
+      .hero{padding:110px 0 65px;min-height:auto}
+      .hero-grid{gap:35px}
+      h1{font-size:50px}
+      .hero-copy{font-size:14px}
+      .hero-visual{min-height:330px}
+      .hero-card{border-radius:24px}
+      .hero-logo{left:15px;bottom:15px}
+      .float-stat{top:-10px;left:8px}
+      section{padding:75px 0}
+      .section-head{display:block;margin-bottom:30px}
+      .section-desc{margin-top:12px}
+      .services-grid,.process-grid{grid-template-columns:1fr}
+      .feature-row{grid-template-columns:1fr 1fr;gap:18px}
+      .feature{align-items:flex-start}
+      .hardware{padding:36px 25px;border-radius:24px}
+      .form-row{grid-template-columns:1fr}
+      .contact-panel,.form-panel{padding:24px}
+      .footer-row{flex-direction:column;align-items:flex-start}
+      .wa-float{right:15px;bottom:15px}
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="ANGEL Servicio Técnico">
+        <span class="brand-symbol"><span class="brand-a">A</span></span>
+        <span class="brand-name">ANG<span>E</span>L</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Cómo trabajamos</a>
+        <a href="#hardware">Hardware</a>
+        <a href="#faq">Preguntas</a>
+        <a class="nav-cta" href="https://wa.me/543815611117?text=Hola%20ANGEL%2C%20quiero%20consultar%20por%20un%20servicio." target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><i></i> Servicio técnico tecnológico</div>
+          <h1>Tu equipo.<br><span class="gradient">En buenas manos.</span></h1>
+          <p class="hero-copy">
+            Reparación, mantenimiento, redes, software, hardware y recuperación de datos.
+            Soluciones tecnológicas claras, profesionales y pensadas para que puedas volver a trabajar.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/543815611117?text=Hola%20ANGEL%2C%20quiero%20consultar%20por%20un%20servicio." target="_blank" rel="noopener">
+              Consultar por WhatsApp
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.5 8.5 0 0 1-4.1-1l-4.2 1.1 1.1-4.1a8.4 8.4 0 1 1 15.7-4.4Z"/><path d="M8.7 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.3.1.5-.1.7l-.5.6c.7 1.3 1.7 2.3 3 3l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1 .3-1.5.2-3.1-.7-6.8-4.3-7.5-7.5-.1-.5 0-1.1.2-1.5Z"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="float-stat">
+            <strong>TODAS LAS MARCAS</strong>
+            <span>PC · Notebook · Equipamiento tecnológico</span>
+          </div>
+          <div class="hero-card">
+            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=1200&q=85" alt="Espacio de trabajo con computadora y equipamiento tecnológico">
+            <div class="hero-logo">
+              <span class="brand-symbol"><span class="brand-a">A</span></span>
+              <div>
+                <strong>ANGEL</strong>
+                <small>SERVICIO TÉCNICO</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAND -->
+    <div class="feature-band">
+      <div class="container feature-row">
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 5-3 8.2-7 10-4-1.8-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div><strong>Trabajo responsable</strong><span>Diagnóstico y solución</span></div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <div><strong>PC & notebooks</strong><span>Reparación y mantenimiento</span></div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="10" cy="18" r="1"/></svg>
+          <div><strong>Redes informáticas</strong><span>Instalación y configuración</span></div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M5 21h14"/></svg>
+          <div><strong>Recuperación de datos</strong><span>Asistencia sobre almacenamiento</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="servicios">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Qué hacemos</div>
+            <h2>Servicios tecnológicos<br>para tu día a día.</h2>
+          </div>
+          <p class="section-desc">Desde resolver una falla hasta preparar un equipo nuevo. Elegí el servicio que necesitás y hablá directamente por WhatsApp.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m8 9 2 2 4-4"/></svg>
+            </div>
+            <h3>Reparación de PC y laptop</h3>
+            <p>Diagnóstico, reparación y puesta a punto de computadoras de escritorio y notebooks.</p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="5"/><path d="m5.6 5.6 2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></svg>
+            </div>
+            <h3>Limpieza y mantenimiento</h3>
+            <p>Limpieza interna, mantenimiento preventivo y puesta a punto del equipamiento tecnológico.</p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16M4 12h10M4 17h7"/><circle cx="18" cy="12" r="2"/><circle cx="14" cy="17" r="2"/></svg>
+            </div>
+            <h3>Instalación de programas</h3>
+            <p>Instalación y configuración del software que necesitás para estudiar, trabajar o producir.</p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h18v12H3z"/><path d="M7 7V4h10v3M7 11h10M7 15h5"/></svg>
+            </div>
+            <h3>Redes informáticas</h3>
+            <p>Instalación y organización de redes informáticas, conectividad y equipamiento de red.</p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/><path d="m16 16 2 2 3-3"/></svg>
+            </div>
+            <h3>Equipos a medida & hardware</h3>
+            <p>Venta y armado de equipos según el uso que necesitás, además de componentes y hardware.</p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h5"/><path d="M12 16h.01"/></svg>
+            </div>
+            <h3>Recuperación de datos</h3>
+            <p>Asistencia para recuperar información de unidades de almacenamiento y evaluar opciones de recuperación.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="nosotros">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=85" alt="Tecnología y equipamiento electrónico">
+        </div>
+
+        <div class="about-copy reveal">
+          <div class="kicker">ANGEL · Servicio Técnico</div>
+          <h2>La tecnología tiene que funcionar para vos.</h2>
+          <p>
+            La propuesta de ANGEL es brindar soluciones técnicas para computadoras,
+            notebooks, redes y equipamiento tecnológico, con una comunicación clara
+            y orientada a resolver el problema real.
+          </p>
+
+          <div class="checks">
+            <div class="check"><span>✓</span><div><strong>Trabajamos con todas las marcas</strong><br><small style="color:var(--muted)">Consultá por tu equipo, aunque no sea de una marca específica.</small></div></div>
+            <div class="check"><span>✓</span><div><strong>Soluciones según tu necesidad</strong><br><small style="color:var(--muted)">Desde mantenimiento y software hasta hardware y redes.</small></div></div>
+            <div class="check"><span>✓</span><div><strong>Atención directa por WhatsApp</strong><br><small style="color:var(--muted)">Contanos qué sucede y coordinamos el siguiente paso.</small></div></div>
+          </div>
+
+          <div style="margin-top:27px">
+            <a class="btn btn-primary" href="https://wa.me/543815611117?text=Hola%20ANGEL%2C%20quiero%20consultar%20por%20mi%20equipo." target="_blank" rel="noopener">Hablar con ANGEL</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Proceso</div>
+            <h2>Simple, directo y claro.</h2>
+          </div>
+          <p class="section-desc">La primera conversación sirve para entender qué necesitás y orientarte sobre el servicio correspondiente.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="step reveal"><div class="step-number">01</div><h3>Contanos</h3><p>Escribinos por WhatsApp y describí el problema, equipo o proyecto.</p></article>
+          <article class="step reveal"><div class="step-number">02</div><h3>Evaluamos</h3><p>Analizamos qué servicio corresponde y qué información necesitamos.</p></article>
+          <article class="step reveal"><div class="step-number">03</div><h3>Trabajamos</h3><p>Realizamos el trabajo acordado sobre el equipo o instalación.</p></article>
+          <article class="step reveal"><div class="step-number">04</div><h3>Listo</h3><p>Recibís tu equipo o instalación preparada según el servicio realizado.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HARDWARE -->
+    <section id="hardware">
+      <div class="container">
+        <div class="hardware reveal">
+          <div class="kicker">Hardware & equipos</div>
+          <h2>¿Necesitás una PC<br>hecha para vos?</h2>
+          <p>
+            Podemos orientarte en la elección de componentes y equipos según el uso que
+            necesitás: trabajo, estudio, gaming u otras necesidades.
+          </p>
+          <div class="hardware-tags">
+            <span class="tag">PC a medida</span>
+            <span class="tag">Componentes</span>
+            <span class="tag">Actualizaciones</span>
+            <span class="tag">Hardware</span>
+            <span class="tag">Asesoramiento</span>
+          </div>
+          <div style="margin-top:27px">
+            <a class="btn btn-primary" href="https://wa.me/543815611117?text=Hola%20ANGEL%2C%20quiero%20consultar%20por%20una%20PC%20a%20medida%20o%20hardware." target="_blank" rel="noopener">Consultar hardware</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contacto">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Contacto</div>
+            <h2>Contanos qué necesitás.</h2>
+          </div>
+          <p class="section-desc">Completá el formulario y se abrirá WhatsApp con tu consulta lista para enviar.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-panel reveal">
+            <h3>Hablemos por WhatsApp</h3>
+            <p>La forma más rápida de iniciar una consulta es enviarnos los datos básicos de tu equipo o proyecto.</p>
+
+            <div class="contact-items">
+              <a class="contact-item" href="https://wa.me/543815611117" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.5 8.5 0 0 1-4.1-1l-4.2 1.1 1.1-4.1a8.4 8.4 0 1 1 15.7-4.4Z"/><path d="M8.7 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.3.1.5-.1.7l-.5.6c.7 1.3 1.7 2.3 3 3l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1 .3-1.5.2-3.1-.7-6.8-4.3-7.5-7.5-.1-.5 0-1.1.2-1.5Z"/></svg>
+                <div><strong>WhatsApp</strong><span>+54 381 561 1117</span></div>
+              </a>
+
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+                <div><strong>Consultas</strong><span>Reparaciones · redes · software · hardware</span></div>
+              </div>
+
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.3"/></svg>
+                <div><strong>Servicio técnico</strong><span>Consultá disponibilidad y modalidad de atención</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-panel reveal">
+            <h3>Pedí una consulta</h3>
+            <form id="leadForm">
+              <div class="form-row">
+                <label>Nombre
+                  <input id="name" type="text" placeholder="Tu nombre" required>
+                </label>
+                <label>Servicio
+                  <select id="service" required>
+                    <option value="">Seleccionar</option>
+                    <option>Reparación de PC / laptop</option>
+                    <option>Limpieza y mantenimiento</option>
+                    <option>Instalación de programas</option>
+                    <option>Instalación de redes</option>
+                    <option>PC a medida / hardware</option>
+                    <option>Recuperación de datos</option>
+                    <option>Otro</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>Contanos brevemente
+                <textarea id="message" placeholder="Ej.: mi notebook se apaga, necesito una red para mi oficina, quiero armar una PC..." required></textarea>
+              </label>
+
+              <button class="btn btn-primary" type="submit">
+                Enviar consulta por WhatsApp
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.5 8.5 0 0 1-4.1-1l-4.2 1.1 1.1-4.1a8.4 8.4 0 1 1 15.7-4.4Z"/></svg>
+              </button>
+              <div class="form-note">No se almacena el formulario en esta página. Al enviarlo, se abre WhatsApp.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal" style="justify-content:center;text-align:center">
+          <div>
+            <div class="kicker">Preguntas frecuentes</div>
+            <h2>Antes de escribirnos.</h2>
+          </div>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item reveal">
+            <button class="faq-q"><span>¿Trabajan con todas las marcas?</span><span>+</span></button>
+            <div class="faq-a">Sí. Trabajamos con equipos de distintas marcas. Enviá el modelo de tu equipo por WhatsApp para consultar por el servicio que necesitás.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q"><span>¿Puedo consultar por una PC a medida?</span><span>+</span></button>
+            <div class="faq-a">Sí. Podés consultar por una PC a medida, componentes, hardware o una actualización según el uso que tengas pensado darle.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q"><span>¿Realizan instalación de redes?</span><span>+</span></button>
+            <div class="faq-a">Sí. Ofrecemos instalación de redes informáticas. Contanos qué espacio tenés y qué necesitás conectar para orientarte.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q"><span>¿Pueden recuperar datos?</span><span>+</span></button>
+            <div class="faq-a">Sí. Se ofrece evaluación y asistencia para recuperación de datos. Es importante consultar antes de continuar usando una unidad que presente una falla de almacenamiento.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q"><span>¿Cómo solicito un presupuesto?</span><span>+</span></button>
+            <div class="faq-a">Escribinos por WhatsApp indicando tu nombre, el equipo o proyecto y qué necesitás. A partir de esa información podemos orientarte sobre el siguiente paso.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="container reveal">
+        <div class="kicker">¿Tenés un problema con tu equipo?</div>
+        <h2>Hablemos y encontremos la solución.</h2>
+        <p>Reparación · mantenimiento · redes · software · hardware · recuperación de datos</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/543815611117?text=Hola%20ANGEL%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div class="footer-copy">© <span id="year"></span> ANGEL · SERVICIO TÉCNICO. Todos los derechos reservados.</div>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a class="wa-float" href="https://wa.me/543815611117?text=Hola%20ANGEL%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .4 5.2.4 11.7c0 2.1.6 4.1 1.6 5.8L.3 24l6.7-1.7c1.6.9 3.4 1.4 5.2 1.4h.1c6.4 0 11.7-5.2 11.7-11.7 0-3.1-1.2-6.2-3.5-8.5Zm-8.3 18.1c-1.7 0-3.3-.4-4.8-1.3l-.3-.2-4 1 1.1-3.9-.2-.4a9.8 9.8 0 1 1 8.2 4.8Zm5.4-7.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.8 1.1-.2.2-.3.2-.6.1-1.6-.8-2.7-1.4-3.8-3.2-.3-.5.3-.5.8-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.3 3.6 5.6 5 .8.3 1.4.5 1.9.6.8.3 1.6.2 2.2.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.1-.3-.2-.6-.3Z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Menú móvil
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Año automático
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // FAQ
+    document.querySelectorAll(".faq-q").forEach(button => {
+      button.addEventListener("click", () => {
+        const item = button.parentElement;
+        document.querySelectorAll(".faq-item").forEach(other => {
+          if (other !== item) other.classList.remove("open");
+        });
+        item.classList.toggle("open");
+      });
+    });
+
+    // Formulario -> WhatsApp
+    document.getElementById("leadForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+        `Hola ANGEL, soy ${name}.%0A%0A` +
+        `Servicio: ${service}%0A` +
+        `Consulta: ${message}%0A%0A` +
+        `Enviado desde la web.`;
+
+      window.open(`https://wa.me/543815611117?text=${text}`, "_blank", "noopener");
+    });
+
+    // Animaciones de entrada
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.08});
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
